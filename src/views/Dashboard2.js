@@ -77,7 +77,7 @@ function Dashboard2() {
                 <table class="table table-bordered table-hover table-condensed">
                   <thead>
                     <tr>
-                 
+
                       <td></td>
                       <td></td>
                       <td><strong>SUJET</strong></td>
@@ -91,7 +91,7 @@ function Dashboard2() {
                     </tr>
                   </thead>
                   <tbody>
-                   
+
                     <tr>
                       <td>#1</td>
                       <td>2020-02-20</td>
