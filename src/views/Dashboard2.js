@@ -3,7 +3,6 @@ import { Pie, Bar } from "react-chartjs-2";
 import Kpi from "components/kpi/Kpi";
 
 import {
-  Table,
   Card,
   CardHeader,
   CardBody,
@@ -15,7 +14,6 @@ import {
 import {
   piechart1Op1,
   barChartOp1,
-  kpi1
 } from "variables/charts.js";
 
 function Dashboard2() {
@@ -43,8 +41,7 @@ function Dashboard2() {
           <Col md="4">
             <Card>
               <CardHeader>
-                <CardTitle tag="h5">Email Statistics</CardTitle>
-                <p className="card-category">Last Campaign Performance</p>
+                <p className="card-category">{piechart1Op1.datasetlabel}</p>
               </CardHeader>
               <CardBody style={{ height: "300px" }}>
                 <Pie
@@ -54,10 +51,9 @@ function Dashboard2() {
               </CardBody>
               <CardFooter>
                 <div className="legend">
-                  <i className="fa fa-circle text-primary" /> Opened{" "}
-                  <i className="fa fa-circle text-warning" /> Read{" "}
-                  <i className="fa fa-circle text-danger" /> Deleted{" "}
-                  <i className="fa fa-circle text-gray" /> Unopened
+                  <i className="fa fa-circle text-primary" /> Envoi{" "}
+                  <i className="fa fa-circle text-warning" /> Ouverture{" "}
+                  <i className="fa fa-circle text-danger" /> Click{" "}
                 </div>
                 <hr />
                 <div className="stats">
@@ -71,134 +67,120 @@ function Dashboard2() {
           <Col md="12">
             <Card>
               <CardHeader>
-                <CardTitle tag="h4">Simple Table</CardTitle>
+                <CardTitle tag="h4">Graph</CardTitle>
               </CardHeader>
               <CardBody>
                 <table class="table table-bordered table-hover table-condensed">
                   <thead>
                     <tr>
-
                       <td></td>
                       <td></td>
-                      <td><strong>SUJET</strong></td>
-                      <td><strong>Envoi</strong></td>
-                      <td><strong>Ouv</strong></td>
+                      <td>SUJET</td>
+                      <td>Envoi</td>
                       <td></td>
-                      <td><strong>Clics</strong></td>
+                      <td>Ouv.</td>
+                      <td>Clics</td>
                       <td></td>
-                      <td><strong>Ventes</strong></td>
-                      <td></td>
+                      <td>Ventes</td>
                     </tr>
                   </thead>
                   <tbody>
-
+                    <tr>
+                      <td>#0</td>
+                      <td>12-19 mars</td>
+                      <td>Sequence 7 mails Article Diction</td>
+                      <td>11735</td>
+                      <td>3682</td>
+                      <td>31,4%</td>
+                      <td>1142</td>
+                      <td>31,0%</td>
+                      <td>12</td>
+                      <td>1,1%</td>
+                    </tr>
                     <tr>
                       <td>#1</td>
-                      <td>2020-02-20</td>
-                      <td>Mangez-vous parfois vos mots ?</td>
-                      <td>8450</td>
-                      <td>1048</td>
-                      <td>12.4%</td>
-                      <td>245</td>
-                      <td>23,4%</td>
-                      <td>12</td>
-                      <td>4,9%</td>
+                      <td>2020-03-25</td>
+                      <td>En profiter pour nous muscler ?</td>
+                      <td>11922</td>
+                      <td>1603</td>
+                      <td>13,4%</td>
+                      <td>256</td>
+                      <td>16,0%</td>
+                      <td></td>
+                      <td>0,0%</td>
+                    </tr>
+                    <tr>
+                      <td>#1b</td>
+                      <td>2020-03-25</td>
+                      <td>En profiter pour nous muscler ?</td>
+                      <td>10646</td>
+                      <td>919</td>
+                      <td>8,6%</td>
+                      <td>124</td>
+                      <td>13,5%</td>
+                      <td>10</td>
+                      <td>8,1%</td>
                     </tr>
                     <tr>
                       <td>#2</td>
-                      <td>2020-02-21</td>
-                      <td>Quand soudain tout devient plus clair.</td>
-                      <td>8399</td>
-                      <td>958</td>
-                      <td>11.4%</td>
-                      <td>154</td>
-                      <td>16,1%</td>
-                      <td>5</td>
-                      <td>3,2%</td>
+                      <td>2020-03-26</td>
+                      <td>Nous avons été surpris…</td>
+                      <td>11902</td>
+                      <td>1676</td>
+                      <td>14,1%</td>
+                      <td>208</td>
+                      <td>12,4%</td>
+                      <td>4</td>
+                      <td>1,9%</td>
                     </tr>
                     <tr>
                       <td>#3</td>
-                      <td>2020-02-22</td>
-                      <td>Découvrez comment maîtriser votre débit pour…</td>
-                      <td>8389</td>
-                      <td>573</td>
-                      <td>6.8%</td>
-                      <td>110</td>
-                      <td>19,2%</td>
-                      <td>6</td>
-                      <td>5,5%</td>
+                      <td>2020-03-27</td>
+                      <td>Pour bien profiter de la crise : mon tuyau</td>
+                      <td>11887</td>
+                      <td>1451</td>
+                      <td>12,2%</td>
+                      <td>130</td>
+                      <td>9,0%</td>
+                      <td>18</td>
+                      <td>13,8%</td>
                     </tr>
                     <tr>
                       <td>#4</td>
-                      <td>2020-02-23</td>
-                      <td>90% des gens qui parlent vite n’obtiendront pas…</td>
-                      <td>8374</td>
-                      <td>853</td>
-                      <td>10.2%</td>
-                      <td>104</td>
-                      <td>12,2%</td>
-                      <td>9</td>
-                      <td>8,7%</td>
+                      <td>2020-03-28</td>
+                      <td>2 formations pour le prix d’une</td>
+                      <td>11867</td>
+                      <td>1331</td>
+                      <td>11,2%</td>
+                      <td>200</td>
+                      <td>15,0%</td>
+                      <td></td>
+                      <td>0,0%</td>
                     </tr>
                     <tr>
                       <td>#5</td>
-                      <td>2020-02-24</td>
-                      <td>Parlez vite = ne pas obtenir ce qu'on demande ?</td>
-                      <td>7637</td>
-                      <td>427</td>
-                      <td>5.6%</td>
-                      <td>40</td>
-                      <td>9,4%</td>
-                      <td>6</td>
-                      <td>15,0%</td>
+                      <td>2020-03-28</td>
+                      <td>Retrait de votre droit</td>
+                      <td>11852</td>
+                      <td>1946</td>
+                      <td>16,4%</td>
+                      <td>268</td>
+                      <td>13,8%</td>
+                      <td>34</td>
+                      <td>12,7%</td>
                     </tr>
-                    <tr>
-                      <td>#6</td>
-                      <td>2020-02-24</td>
-                      <td>Parler moins vite - Dernier jour de l'offre</td>
-                      <td>8341</td>
-                      <td>625</td>
-                      <td>7.5%</td>
-                      <td>60</td>
-                      <td>9,6%</td>
-                      <td>5</td>
-                      <td>8,3%</td>
-                    </tr>
-                    <tr>
-                      <td>#7</td>
-                      <td>2020-02-24</td>
-                      <td>Retrait de votre droit dans 6h</td>
-                      <td>8329</td>
-                      <td>759</td>
-                      <td>9.1%</td>
-                      <td>98</td>
-                      <td>12,9%</td>
-                      <td>19</td>
-                      <td>19,4%</td>
-                    </tr>
+
                     <tr>
                       <td></td>
                       <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td><strong>TOTAL</strong></td>
-                      <td><strong>8450</strong></td>
-                      <td><strong>2142</strong></td>
-                      <td><strong>25.3%</strong></td>
-                      <td><strong>690</strong></td>
-                      <td><strong>32,2%</strong></td>
-                      <td><strong>50</strong></td>
-                      <td><strong>7,2%</strong></td>
+                      <td>TOTAL (sauf sequence Prévente)</td>
+                      <td>11822</td>
+                      <td>3684</td>
+                      <td>31,2%</td>
+                      <td>976</td>
+                      <td>26,5%</td>
+                      <td>78</td>
+                      <td>8,0%</td>
                     </tr>
                   </tbody>
                 </table>
